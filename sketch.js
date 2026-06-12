@@ -25,6 +25,12 @@ let sac, dmgBuff = false
 
 function setup() {
   createCanvas(400, 400);
+  textSize(20)
+  fill(255)
+  text("WASD to move", 100, 100)
+  text("Press 2 to switch to a gun", 100, 200)
+  text("Click anywhere to start", 100, 300)
+  noLoop();
 }
 
 function draw() {
@@ -208,6 +214,7 @@ function keyPressed() {
 }
 
 function mousePressed() {
+  loop()
   if (isChoosing) {
     for (let i = 0; i < upgradeOptions.length; i++) {
       let yPos = 120 + i * 80;

@@ -1,7 +1,14 @@
 html, body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #222; /* Optional: adds a nice background color */
 }
+
 canvas {
-  display: block;
+  display: block; /* Removes any weird spacing below the canvas */
 }

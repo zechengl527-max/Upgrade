@@ -25,6 +25,7 @@ let sac, dmgBuff = false
 let menu = true;
 
 function setup() {
+  pixelDensity(1)
   createCanvas(400, 400);
 }
 

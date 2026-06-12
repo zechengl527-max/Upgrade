@@ -328,6 +328,7 @@ function drawstartscreen() {
   text("WASD to move", 100, 100)
   fill(255)
   textSize(25)
-  text("Press 2 to switch to a gun", 50, 200)
-  text("Click anywhere to start", 75, 270)
+  text("Click to attack", 120, 175)
+  text("Press 2 to switch to a gun", 50, 250)
+  text("Click anywhere to start", 75, 325)
 }

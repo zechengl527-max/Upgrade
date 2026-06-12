@@ -22,19 +22,19 @@ let maximumHealth = 100
 let equipped = "knife";
 let buff = false
 let sac, dmgBuff = false
+let menu = true;
 
 function setup() {
   createCanvas(400, 400);
-  textSize(20)
-  fill(255)
-  text("WASD to move", 100, 100)
-  text("Press 2 to switch to a gun", 100, 200)
-  text("Click anywhere to start", 100, 300)
-  noLoop();
 }
 
 function draw() {
-  background(0); 
+  background(0)
+  if (menu) {
+    drawstartscreen();
+    return;
+  }
+
 
   
   if (isChoosing) {
@@ -214,7 +214,9 @@ function keyPressed() {
 }
 
 function mousePressed() {
-  loop()
+  if (menu) {
+    menu = false;
+  }
   if (isChoosing) {
     for (let i = 0; i < upgradeOptions.length; i++) {
       let yPos = 120 + i * 80;
@@ -319,3 +321,13 @@ function applyUpgrade(upgrade) {
 function spawnEnemy() { enemies.push({ x: random(0, width), y: -30, health: normalEnemyHealth, size: 30 }); }
 function spawnBigBoy() { enemies.push({ x: random(0, width), y: -30, health: bigBoyHealth, size: 50 }); }
 function spawnMiniBoss() { enemies.push({ x: random(0, width), y: -30, health: miniBossHealth, size: 100 }); }
+
+function drawstartscreen() {
+  textSize(30)
+  fill(255, 0, 0)
+  text("WASD to move", 100, 100)
+  fill(255)
+  textSize(25)
+  text("Press 2 to switch to a gun", 50, 200)
+  text("Click anywhere to start", 75, 270)
+}
